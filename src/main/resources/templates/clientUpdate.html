@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Client Update</title>
+</head>
+<body>
+<div id="clientForm">
+  <form method="post" th:action="@{/clientUpdateForm}" th:object="${client}">
+    <input type="hidden" name="id" th:value="${client.id}">
+    <input type="text" placeholder="Surname" name="surname" th:value="${client.surname}">
+    <input type="text" placeholder="Name" name="name" th:value="${client.name}">
+    <input type="text" placeholder="Patronymic" name="patronymic" th:value="${client.patronymic}">
+    <input type="date" name="birthDate" value="1999-07-22" min="1900-01-01" max="2100-12-31">
+    <select name="gender" id="gender" th:utext="${select}">
+<!--      th:utext="${select}"-->
+      <!--/*@thymesVar id="Client" type="com.example.clientsservicepd12.models.Client"*/-->
+
+      <!--/*@thymesVar id="NONE" type="com.example.clientsservicepd12.models.Client.Gender.NONE"*/-->
+<!--      <option value="NONE" th:object="${none}">NONE</option>-->
+<!--      <option value="MALE" th:object="${male}">MALE</option>-->
+<!--      <option value="FEMALE" th:object="${female}">FEMALE</option>-->
+<!--    /*@thymesVar id="Gender" type="com.example.clientsservicepd12.models.Client.Gender"*/-->
+    </select>
+    <input type="text" placeholder="Email" name="email" th:value="${client.email}">
+    <input type="submit" value="SAVE" id="submitButton">
+  </form>
+</div>
+</body>
+</html>
