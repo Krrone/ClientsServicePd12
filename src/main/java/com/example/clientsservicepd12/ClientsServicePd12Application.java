@@ -1,6 +1,7 @@
 package com.example.clientsservicepd12;
 
 import com.example.clientsservicepd12.models.Client;
+import com.example.clientsservicepd12.models.Phone;
 import com.example.clientsservicepd12.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -35,5 +36,6 @@ public class ClientsServicePd12Application {
 		System.err.println();
 		clientRepository.findAll().forEach(System.err::println);
 		System.out.println("dz 1");
+		Phone phone = new Phone();
 	}
 }
