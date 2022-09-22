@@ -3,7 +3,9 @@ package com.example.clientsservicepd12;
 import com.example.clientsservicepd12.models.Account;
 import com.example.clientsservicepd12.models.Client;
 import com.example.clientsservicepd12.models.Phone;
+import com.example.clientsservicepd12.repositories.AccountRepository;
 import com.example.clientsservicepd12.repositories.ClientRepository;
+import com.example.clientsservicepd12.repositories.PhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,6 +29,10 @@ public class ClientsServicePd12Application {
 
 	@Autowired
 	private ClientRepository clientRepository;
+	@Autowired
+	private PhoneRepository phoneRepository;
+	@Autowired
+	private AccountRepository accountRepository;
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void applicationReady() {
@@ -108,5 +114,7 @@ public class ClientsServicePd12Application {
 
 			}
 		});
+		phoneRepository.save(phone);
+		accountRepository.save(account);
 	}
 }
